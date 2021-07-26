@@ -3,21 +3,28 @@ package com.abdul.mtap2
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
+import com.abdul.mtap2.model.Word
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var  roomDb: WordRoomDb
+    lateinit var wordDao: WordDao
     lateinit var etOne: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         etOne = findViewById(R.id.etOne)
 
-
+        roomDb = WordRoomDb.getDatabase(this)
+        wordDao = roomDb.wordDao()
     }
 
     override fun onPause() {
         super.onPause()
-        saveData()
+       // saveData()
     }
 
     private fun saveData() {
@@ -37,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        restoreData()
+      //  restoreData()
     }
 
     private fun restoreData() {
@@ -47,6 +54,21 @@ class MainActivity : AppCompatActivity() {
         var data  = sharedPreferences.getString("name","")
         //set the data into edittext
         etOne.setText(data)
+
+    }
+
+    fun dbHandler(view: View) {
+
+        insertWordAsynchronously()
+       // wordDao.insert()
+    }
+
+    private fun insertWordAsynchronously() {
+        var data = etOne.text.toString()
+        var word = Word(data)
+        var insertTask = InsertTask(wordDao,word)
+        insertTask.execute()
+
 
     }
 }
