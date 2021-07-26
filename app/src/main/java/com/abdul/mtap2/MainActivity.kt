@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.ListView
 import com.abdul.mtap2.model.Word
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var  roomDb: WordRoomDb
     lateinit var wordDao: WordDao
     lateinit var etOne: EditText
+    lateinit var listview: ListView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +22,18 @@ class MainActivity : AppCompatActivity() {
 
         roomDb = WordRoomDb.getDatabase(this)
         wordDao = roomDb.wordDao()
+        listview = findViewById(R.id.dblist)
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        getDataAsync()
+    }
+
+    private fun getDataAsync() {
+        var task =    getDataTask(this,listview,wordDao)
+        task.execute()
     }
 
     override fun onPause() {

@@ -17,7 +17,8 @@ public interface WordDao {
    @Insert
    void insert(Word word);
 
-
+   @Query("SELECT * from Word ORDER BY title ASC")
+   List<Word> getAllWords();
 
   /* @Update
    public void updateWords(Word... words);
@@ -25,8 +26,7 @@ public interface WordDao {
    @Query("DELETE FROM Word")
    void deleteAll();
 
-   @Query("SELECT * from Word ORDER BY title ASC")
-   List<Word> getAllWords();
+
 
    @Query("SELECT * FROM Word WHERE title LIKE :word ")
    public List<Word> findWord(String word);*/
