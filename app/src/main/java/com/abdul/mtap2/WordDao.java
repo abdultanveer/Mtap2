@@ -16,7 +16,10 @@ public interface WordDao {
    //insert into Word {uid,tile} values {1,"abdul"}
    @Insert
    void insert(Word word);
-   @Update
+
+
+
+  /* @Update
    public void updateWords(Word... words);
 
    @Query("DELETE FROM Word")
@@ -26,6 +29,6 @@ public interface WordDao {
    List<Word> getAllWords();
 
    @Query("SELECT * FROM Word WHERE title LIKE :word ")
-   public List<Word> findWord(String word);
+   public List<Word> findWord(String word);*/
 
 }
