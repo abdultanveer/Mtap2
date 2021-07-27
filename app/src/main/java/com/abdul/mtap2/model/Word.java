@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Word {
 
+
     @PrimaryKey(autoGenerate=true)
     public int uid;
 
@@ -16,6 +17,7 @@ public class Word {
     public Word(String title) {
         this.title = title;
     }
+
 
     @Override
     public String toString() {
