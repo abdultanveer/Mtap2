@@ -18,7 +18,7 @@ public interface WordDao {
    @Insert
    void insert(Word word);
 
-   @Query("SELECT * from Word ORDER BY title ASC")
+   @Query("SELECT * from Word")
    LiveData<List<Word>> getAllWords(); //once i wrap this list<word> into live data, the data becomes observable
 
   /* @Update

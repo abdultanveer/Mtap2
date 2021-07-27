@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         //mainactivity will observe the viewmodel
         mWordViewModel!!.allWords.observe(this,  Observer<List<Word>>{
 
-            wordTextView.text = it.toString()
+            wordTextView.text =  it[it.size-1].toString()
         })
 
         /*mWordViewModel.getAllWords().observe(this,
