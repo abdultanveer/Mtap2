@@ -26,17 +26,27 @@
         android:layout_marginStart="38dp"
         android:layout_marginLeft="38dp"
         android:layout_marginTop="55dp"
-        android:text="save"
         android:onClick="dbHandler"
+        android:text="save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etOne" />
 
     <ListView
         android:id="@+id/dblist"
-        app:layout_constraintTop_toBottomOf="@id/buttonSave"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonSave" />
+
+    <TextView
+        android:id="@+id/textViewNAme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="TextView"
+       app:layout_constraintTop_toBottomOf="@id/etOne"
+        app:layout_constraintLeft_toLeftOf="@id/buttonSave"
+        tools:layout_editor_absoluteX="289dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
