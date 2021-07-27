@@ -9,19 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mtap2">
-        <activity android:name=".CalendarActivity">
-            <intent-filter>
-                <action android:name="ineed.water"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".NewWordActivity"></activity>
+        <activity android:name=".MvvmActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CalendarActivity">
+            <intent-filter>
+                <action android:name="ineed.water" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
