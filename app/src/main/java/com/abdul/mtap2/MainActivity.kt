@@ -9,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.abdul.mtap2.model.Word
+import com.abdul.mtap2.mvvm.InsertTask
+import com.abdul.mtap2.mvvm.WordDao
+import com.abdul.mtap2.mvvm.WordRoomDb
+import com.abdul.mtap2.mvvm.WordViewModel
 
 class MainActivity : AppCompatActivity() {
 

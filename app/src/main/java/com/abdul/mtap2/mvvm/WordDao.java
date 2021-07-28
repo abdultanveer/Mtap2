@@ -1,4 +1,4 @@
-package com.abdul.mtap2;
+package com.abdul.mtap2.mvvm;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

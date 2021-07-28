@@ -1,14 +1,12 @@
 
 
-package com.abdul.mtap2
+package com.abdul.mtap2.model
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.abdul.mtap2.model.DaoWord
-import com.abdul.mtap2.model.Word1
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
