@@ -4,12 +4,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.abdul.mtap2.model.Word1
 
-class WordzAdapter(var words: Array<String>) :RecyclerView.Adapter<WordzAdapter.WordVH>() {
+class WordzAdapter(var words: ArrayList<String>) :RecyclerView.Adapter<WordzAdapter.WordVH>() {
 
     class WordVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val wordItemView: TextView = itemView.findViewById(R.id.tvRvItem)

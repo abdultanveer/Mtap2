@@ -15,7 +15,7 @@ class MvvmActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: WordzAdapter
 
-    var words = arrayOf("word1","word2","word3")
+    var words = arrayListOf<String>("word1","word2","word3")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mvvm)
@@ -32,6 +32,9 @@ class MvvmActivity : AppCompatActivity(), View.OnClickListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         super.onActivityResult(requestCode, resultCode, intent)
         var newWord = intent?.getStringExtra("nw")
+        words.add(newWord.toString())
+        //words[words.size] = newWord.toString()
+        adapter.notifyDataSetChanged()
         Log.i(TAG,"new word is "+newWord)
     }
 
