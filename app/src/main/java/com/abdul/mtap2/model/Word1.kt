@@ -7,4 +7,4 @@ import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 
 @Entity
-data class Word1( @NonNull @PrimaryKey @ColumnInfo val word: String?)
+data class Word1(@PrimaryKey @NonNull @ColumnInfo val word: String)

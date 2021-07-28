@@ -19,8 +19,8 @@ class WordzAdapter(var words: Array<String>) : ListAdapter<Word1, WordzAdapter.W
 
     override fun onBindViewHolder(holder: WordVH, position: Int) {
         val current = getItem(position)
-        //holder.bind(current.word)
-        holder.bind(words[position])
+        holder.bind(current.word)
+       // holder.bind(words[position])
     }
 
 

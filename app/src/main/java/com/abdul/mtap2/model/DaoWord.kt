@@ -12,5 +12,5 @@ interface DaoWord {
     fun getAllWords(): Flow<List<Word1>>
 
     @Insert
-    fun insert(word: Word1)
+    suspend fun insert(word: Word1)
 }

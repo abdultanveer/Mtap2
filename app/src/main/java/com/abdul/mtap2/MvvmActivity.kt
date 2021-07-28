@@ -43,7 +43,8 @@ class MvvmActivity : AppCompatActivity(), View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, intent)
         var newWord = intent?.getStringExtra("nw")
         Log.i(TAG,"new word is "+newWord)
-        wordViewModel.insert(Word1(newWord))
+
+        wordViewModel.insert(Word1(newWord.toString()))
     }
 
     override fun onClick(p0: View?) {

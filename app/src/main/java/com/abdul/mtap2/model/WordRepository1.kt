@@ -1,10 +1,12 @@
 package com.abdul.mtap2.model
 
+import androidx.annotation.WorkerThread
 import kotlinx.coroutines.flow.Flow
 
 class WordRepository1(private val daoWord: DaoWord) {
 
-    fun insert(word1: Word1) {
+    @WorkerThread
+    suspend fun insert(word1: Word1) {
         daoWord.insert(word1)
 
     }

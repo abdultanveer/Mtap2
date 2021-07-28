@@ -6,23 +6,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.abdul.mtap2.model.Word
-import com.abdul.mtap2.mvvm.InsertTask
-import com.abdul.mtap2.mvvm.WordDao
-import com.abdul.mtap2.mvvm.WordRoomDb
-import com.abdul.mtap2.mvvm.WordViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var  roomDb: WordRoomDb
-    lateinit var wordDao: WordDao
+
     lateinit var etOne: EditText
    // lateinit var listview: ListView
     lateinit var adapter: ArrayAdapter<String>
     lateinit var wordTextView: TextView
-    var mWordViewModel: WordViewModel? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,22 +22,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         etOne = findViewById(R.id.etOne)
 
-        roomDb = WordRoomDb.getDatabase(this)
-        wordDao = roomDb.wordDao()
+
         //listview = findViewById(R.id.dblist)
         wordTextView = findViewById(R.id.textViewNAme);
-        mWordViewModel = ViewModelProviders.of(this).get(WordViewModel::class.java)
 
-        //mainactivity will observe the viewmodel
-        mWordViewModel!!.allWords.observe(this,  Observer<List<Word>>{
-
-            wordTextView.text =  it[it.size-1].toString()
-        })
-
-        /*mWordViewModel.getAllWords().observe(this,
-            listwords -> {
-            wordTextView.setText(listwords.get(2).word);
-        });*/
 
     }
 
@@ -107,8 +87,6 @@ class MainActivity : AppCompatActivity() {
     private fun insertWordAsynchronously() {
         var data = etOne.text.toString()
         var word = Word(data)
-        var insertTask = InsertTask(wordDao, word)
-        insertTask.execute()
 
 
 
@@ -117,7 +95,7 @@ class MainActivity : AppCompatActivity() {
     class getDataAsyncTask(
         var context: Context,
         var mlistview: ListView,
-        var mWordDao: WordDao,
+       // var mWordDao: WordDao,
         var adapter: ArrayAdapter<String>
     ) : AsyncTask<Void, Void, List<Word>>(){
 
