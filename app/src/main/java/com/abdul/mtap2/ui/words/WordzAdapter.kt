@@ -1,4 +1,4 @@
-package com.abdul.mtap2.model
+package com.abdul.mtap2.ui.words
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.abdul.mtap2.R
+import com.abdul.mtap2.data.Word1
 
 class WordzAdapter(var words: Array<String>) : ListAdapter<Word1, WordzAdapter.WordVH>(
     WORDS_COMPARATOR

@@ -1,8 +1,9 @@
-package com.abdul.mtap2.model
+package com.abdul.mtap2.data.source.local
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import com.abdul.mtap2.data.Word1
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -13,4 +14,6 @@ interface DaoWord {
 
     @Insert
     suspend fun insert(word: Word1)
+
+    //INSERT INTO Word1 (word) VALUES ("android");
 }

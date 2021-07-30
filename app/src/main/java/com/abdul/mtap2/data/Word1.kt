@@ -1,4 +1,4 @@
-package com.abdul.mtap2.model
+package com.abdul.mtap2.data
 
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo

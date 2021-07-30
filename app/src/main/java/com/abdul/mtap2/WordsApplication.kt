@@ -1,7 +1,8 @@
-package com.abdul.mtap2.model
+package com.abdul.mtap2
 
 import android.app.Application
-import com.abdul.mtap2.model.WordRoomDatabase
+import com.abdul.mtap2.data.source.WordRepository1
+import com.abdul.mtap2.data.source.local.WordRoomDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 

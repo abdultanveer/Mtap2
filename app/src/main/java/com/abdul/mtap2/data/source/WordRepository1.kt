@@ -1,6 +1,8 @@
-package com.abdul.mtap2.model
+package com.abdul.mtap2.data.source
 
 import androidx.annotation.WorkerThread
+import com.abdul.mtap2.data.Word1
+import com.abdul.mtap2.data.source.local.DaoWord
 import kotlinx.coroutines.flow.Flow
 
 class WordRepository1(private val daoWord: DaoWord) {
@@ -11,6 +13,6 @@ class WordRepository1(private val daoWord: DaoWord) {
 
     }
 
-    val allWords: Flow<List<Word1>>  = daoWord.getAllWords()
+    val allWords: Flow<List<Word1>>  = daoWord.getAllWords()  //Flowable
 }
 

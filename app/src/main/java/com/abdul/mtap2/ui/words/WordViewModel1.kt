@@ -1,6 +1,8 @@
 package com.abdul.mtap2.model
 
 import androidx.lifecycle.*
+import com.abdul.mtap2.data.Word1
+import com.abdul.mtap2.data.source.WordRepository1
 import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
@@ -9,6 +11,7 @@ class WordViewModel1(private val repository: WordRepository1): ViewModel() {
     val allWords: LiveData<List<Word1>> = repository.allWords.asLiveData()
 
     fun insert(word1: Word1) = viewModelScope.launch {
+
         repository.insert(word1)
     }
 }
