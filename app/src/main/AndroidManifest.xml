@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.abdul.mtap2">
-<!--
-    step 4
--->
-<uses-permission android:name="android.permission.INTERNET"/>
+    <!--         step 4 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".WordsApplication"
         android:allowBackup="true"
@@ -13,15 +12,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mtap2">
+        <activity android:name=".BooksActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_launcher_background" />
-        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/design_default_color_primary" />
+
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
@@ -30,18 +39,11 @@
             </intent-filter>
         </service>
 
-
-        <activity android:name=".whowroteit.WhowroteItActivity">
+        <activity android:name=".whowroteit.WhowroteItActivity"></activity>
+        <activity android:name=".ui.addedit.NewWordActivity">
 
         </activity>
-        <activity android:name="com.abdul.mtap2.ui.addedit.NewWordActivity" />
-        <activity android:name="com.abdul.mtap2.ui.words.MvvmActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".ui.words.MvvmActivity"></activity>
         <activity android:name=".CalendarActivity">
             <intent-filter>
                 <action android:name="ineed.water" />

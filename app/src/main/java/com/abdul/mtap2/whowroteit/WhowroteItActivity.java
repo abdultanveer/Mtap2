@@ -27,4 +27,5 @@ TextView mTitleText,mAuthorText;
 
         new FetchBook(mTitleText, mAuthorText).execute(mQueryString);
     }
+
 }
